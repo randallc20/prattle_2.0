@@ -1,0 +1,2 @@
+class PairMessagesController < ApplicationController
+end

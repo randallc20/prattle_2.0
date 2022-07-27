@@ -1,0 +1,2 @@
+class UserConnectionsController < ApplicationController
+end
