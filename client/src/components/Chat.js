@@ -28,7 +28,9 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
       console.log("do nothing");
     } else {
       if (recipient.typeOf === "channel") {
-        fetch(`http://localhost:3000/channels/${recipient.name}/messages`)
+        fetch(
+          `https://dry-dusk-37249.herokuapp.com/channels/${recipient.name}/messages`
+        )
           .then((response) => response.json())
           .then((data) => {
             let newData;
@@ -50,7 +52,7 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
           .catch((error) => window.alert(error));
       } else if (recipient.typeOf === "user") {
         fetch(
-          `http://localhost:3000/users/${user.id}/messages/${recipient.name}`
+          `https://dry-dusk-37249.herokuapp.com/users/${user.id}/messages/${recipient.name}`
         )
           .then((response) => response.json())
           .then((data) => {
@@ -101,7 +103,7 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
     console.log("sending a message");
 
     if (recipient.typeOf === "user") {
-      fetch("http://localhost:3000/users/friends/send_message", {
+      fetch("https://dry-dusk-37249.herokuapp.com/users/friends/send_message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -119,17 +121,20 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
         })
         .catch((error) => window.alert(error));
     } else if (recipient.typeOf === "channel") {
-      fetch("http://localhost:3000/users/channels/send_message", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: newMessage,
-          user_id: user.id,
-          recipient: recipient.name,
-        }),
-      })
+      fetch(
+        "https://dry-dusk-37249.herokuapp.com/users/channels/send_message",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: newMessage,
+            user_id: user.id,
+            recipient: recipient.name,
+          }),
+        }
+      )
         .then((response) => response.json())
         .then((data) => {
           const newData = { ...allChannelMessages };

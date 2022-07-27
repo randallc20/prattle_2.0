@@ -18,7 +18,7 @@ function SignUp({ setResponse }) {
   function handleFormSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    fetch("http://localhost:3000/signup", {
+    fetch("https://dry-dusk-37249.herokuapp.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
