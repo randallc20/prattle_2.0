@@ -17,7 +17,7 @@ function LogIn() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    fetch("https://dry-dusk-37249.herokuapp.com/login", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function LogIn() {
   console.log(response);
   function handleInfoClick(e) {
     e.preventDefault();
-    fetch(`https://dry-dusk-37249.herokuapp.com/users/${response.user_id}`)
+    fetch(`/users/${response.user_id}`)
       .then((response) => response.json())
       .then((data) => setUserInfo(data))
       .catch((error) => window.alert(error));
