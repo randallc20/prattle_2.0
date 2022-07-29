@@ -1,24 +1,18 @@
-# README
+# Prattle
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Are you tired of texting, emailing, groupme messaging, facetiming, and all the other boring
+forms of communicating with your fiends or enemies. Well I have a solution for you.  
+Prattle is the new and less improved version of Discord coming soon to the web near you.
+Featuring direct messaging betweens both friends and foes, themed channels for discussing your favorite topics
+or even channels only accessible via invite.
 
-Things you may want to cover:
+## User Stories
 
-* Ruby version
+- user can log in to their account
+- user can view a list of their friends
+- user can search for other users
+- user can send messages to other users
 
-* System dependencies
+## Wire Frame and Back-End Relationships
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://whimsical.com/prattle-BmpdN71thZkVFio6jXtxgd
