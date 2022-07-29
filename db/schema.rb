@@ -11,9 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_07_27_153919) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "channel_messages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "channel_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "channel_id", null: false
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -22,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_27_153919) do
   end
 
   create_table "channel_users", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "channel_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "channel_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["channel_id"], name: "index_channel_users_on_channel_id"
@@ -37,8 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_27_153919) do
   end
 
   create_table "pair_messages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "user_pair_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "user_pair_id", null: false
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,8 +50,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_27_153919) do
   end
 
   create_table "user_connections", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "user_pair_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "user_pair_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_connections_on_user_id"

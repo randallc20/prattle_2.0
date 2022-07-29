@@ -17,7 +17,7 @@ function LogIn() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    fetch("http://localhost:3000/login", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function LogIn() {
   console.log(response);
   function handleInfoClick(e) {
     e.preventDefault();
-    fetch(`http://localhost:3000/users/${response.user_id}`)
+    fetch(`/users/${response.user_id}`)
       .then((response) => response.json())
       .then((data) => setUserInfo(data))
       .catch((error) => window.alert(error));

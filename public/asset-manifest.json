@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fd1d0ec7.css",
+    "main.js": "/static/js/main.47618900.js",
+    "static/media/PrattleLogo.png": "/static/media/PrattleLogo.df4ca5a14c5f1a466038.png",
+    "index.html": "/index.html",
+    "main.fd1d0ec7.css.map": "/static/css/main.fd1d0ec7.css.map",
+    "main.47618900.js.map": "/static/js/main.47618900.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd1d0ec7.css",
+    "static/js/main.47618900.js"
+  ]
+}

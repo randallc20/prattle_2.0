@@ -16,7 +16,7 @@ function Hero({ setResponse, response }) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    fetch("http://localhost:3000/login", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

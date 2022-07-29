@@ -28,7 +28,7 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
       console.log("do nothing");
     } else {
       if (recipient.typeOf === "channel") {
-        fetch(`http://localhost:3000/channels/${recipient.name}/messages`)
+        fetch(`/channels/${recipient.name}/messages`)
           .then((response) => response.json())
           .then((data) => {
             let newData;
@@ -49,9 +49,7 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
           })
           .catch((error) => window.alert(error));
       } else if (recipient.typeOf === "user") {
-        fetch(
-          `http://localhost:3000/users/${user.id}/messages/${recipient.name}`
-        )
+        fetch(`/users/${user.id}/messages/${recipient.name}`)
           .then((response) => response.json())
           .then((data) => {
             let newData;
@@ -101,7 +99,7 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
     console.log("sending a message");
 
     if (recipient.typeOf === "user") {
-      fetch("http://localhost:3000/users/friends/send_message", {
+      fetch("/users/friends/send_message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +117,7 @@ function Chat({ recipient, user, readyToMount, setReadyToMount }) {
         })
         .catch((error) => window.alert(error));
     } else if (recipient.typeOf === "channel") {
-      fetch("http://localhost:3000/users/channels/send_message", {
+      fetch("/users/channels/send_message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -35,7 +35,7 @@ function Home({ response }) {
     if (!response) {
       navigate("/");
     } else {
-      fetch(`http://localhost:3000/users/${response.user_id}`)
+      fetch(`/users/${response.user_id}`)
         .then((response) => response.json())
         .then((data) => {
           let newData;
@@ -64,7 +64,7 @@ function Home({ response }) {
       "This is where we are joining a new channel: " + newChannelName
     );
     if (newChannelName) {
-      fetch(`http://localhost:3000/channels/join`, {
+      fetch(`/channels/join`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ function Home({ response }) {
     const newChannelName = prompt("Enter a new channel name");
     console.log("This is where we are making a new channel: " + newChannelName);
     if (newChannelName) {
-      fetch("http://localhost:3000/channels", {
+      fetch("/channels", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +116,7 @@ function Home({ response }) {
     const newFriendName = prompt("Enter a new friend name");
     console.log("This is the name of a new friend: " + newFriendName);
     if (newFriendName) {
-      fetch(`http://localhost:3000/users/add_friend`, {
+      fetch(`/users/add_friend`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
